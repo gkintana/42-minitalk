@@ -1,1 +1,1 @@
-# 42-minitalk
+### 42 - Minitalk Project
