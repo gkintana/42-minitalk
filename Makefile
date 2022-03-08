@@ -40,6 +40,8 @@ CYAN		=	"\033[3;36m"
 				$(CC) $(CFLAGS) -I $(INC_DIR) -c $< -o $(<:.c=.o)
 				@printf $(DEFAULT)
 
+all:			$(LIBFT) $(CLIENT) $(SERVER)
+
 $(LIBFT):
 				make -C $(LIBFT_DIR) all
 
@@ -52,8 +54,6 @@ $(SERVER):		$(OBJ_SERVER)
 				@printf $(CYAN)
 				$(CC) $(CFLAGS) $(OBJ_SERVER) -o $@ $(LIBFT) $(PRINTF)
 				@echo $(DEFAULT)$(GREEN)"Minitalk Server Ready 🤓"$(DEFAULT)
-				
-all:			$(LIBFT) $(CLIENT) $(SERVER)
 
 bonus:			all
 
