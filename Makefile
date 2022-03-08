@@ -6,7 +6,7 @@
 #    By: gkintana <gkintana@student.42abudhabi.ae>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/10 10:08:22 by gkintana          #+#    #+#              #
-#    Updated: 2022/01/29 17:26:54 by gkintana         ###   ########.fr        #
+#    Updated: 2022/03/08 21:35:52 by gkintana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,7 @@ CFLAGS		=	-Wall -Wextra -Werror
 RM			=	rm -f
 
 DEFAULT		=	"\033[0m"
+RED			=	"\033[0;31m"
 GREEN		=	"\033[1;32m"
 YELLOW		=	"\033[0;33m"
 CYAN		=	"\033[3;36m"
@@ -59,10 +60,12 @@ bonus:			all
 
 clean:
 				make -C $(LIBFT_DIR) fclean
-				$(RM) $(OBJ_CLIENT) $(OBJ_SERVER)
-
+				@$(RM) $(OBJ_CLIENT) $(OBJ_SERVER)
+				@echo $(DEFAULT)$(RED)"Deleted object files 😢"$(DEFAULT)
+				
 fclean:			clean
-				$(RM) $(CLIENT) $(SERVER)
+				@$(RM) $(CLIENT) $(SERVER)
+				@echo $(DEFAULT)$(RED)"Deleted client and server executables 😢"$(DEFAULT)
 
 re:				fclean all
 
